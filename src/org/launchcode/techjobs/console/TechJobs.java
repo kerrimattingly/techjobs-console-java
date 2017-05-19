@@ -12,7 +12,7 @@ public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -104,27 +104,34 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        //check if the arrayList is empty; if so give a message; if not run the code
 
-        System.out.println("*****");
+        if (JobData.findAll().isEmpty()){
 
-        for(HashMap<String,String> aJobHashMap : JobData.findAll()) {
+            System.out.println("No jobs to display");
 
-            for(String key : aJobHashMap.keySet()) {
+        } else {
+            System.out.println("*****");
 
-                System.out.println(key + ": " + aJobHashMap.get(key));
+            for (HashMap<String, String> aJobHashMap : JobData.findAll()) {
+
+                for (String key : aJobHashMap.keySet()) {
+
+                    System.out.println(key + ": " + aJobHashMap.get(key));
+
+                }
+
+                System.out.println("*****");
 
             }
 
-        System.out.println("*****");
-
         }
-
     }
 }
