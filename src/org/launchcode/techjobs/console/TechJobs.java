@@ -116,10 +116,11 @@ public class TechJobs {
         if (someJobs.isEmpty()){
             System.out.println("No results to display");
         } else {
-            System.out.println("*****");
+
             for (HashMap<String, String> aJobHashMap : someJobs) {
+                System.out.println("\n" + "*****");
                 for (String key : aJobHashMap.keySet()) {
-                    System.out.println(key + ": " + aJobHashMap.get(key));
+                    System.out.println("" + key + ": " + aJobHashMap.get(key));
                 }
                 System.out.println("*****");
             }
