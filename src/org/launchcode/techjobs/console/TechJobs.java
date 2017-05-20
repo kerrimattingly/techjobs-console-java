@@ -111,27 +111,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        //check if the arrayList is empty; if so give a message; if not run the code
 
-        if (JobData.findAll().isEmpty()){
-
-            System.out.println("No jobs to display");
-
+        if (someJobs.isEmpty()){
+            System.out.println("No results to display");
         } else {
             System.out.println("*****");
-
-            for (HashMap<String, String> aJobHashMap : JobData.findAll()) {
-
+            for (HashMap<String, String> aJobHashMap : someJobs) {
                 for (String key : aJobHashMap.keySet()) {
-
                     System.out.println(key + ": " + aJobHashMap.get(key));
-
                 }
-
                 System.out.println("*****");
-
             }
-
         }
     }
 }
